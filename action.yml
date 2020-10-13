@@ -1,0 +1,33 @@
+name: cloud.gov CLI
+description: Command-line interface for cloud.gov
+inputs:
+  command:
+    description: "Cloud foundry CLI command to run (default: push)"
+    required: false
+    default: push
+  application:
+    description: Application to deploy (required unless manifest is supplied)
+    required: false
+  manifest:
+    description: "Alternate location for manifest file (default: manifest.yml)"
+    required: false
+  org:
+    description: Target organization in cloud.gov
+    required: true
+  space:
+    description: Target space in the given cloud.gov organization
+    required: false
+  user:
+    description: Username for authentication to cloud.gov (should be a service key)
+    required: true
+  password:
+    description: Password for authentication to cloud.gov (user should be a service account)
+    required: true
+  api:
+    description: API server (defaults to https://api.fr.cloud.gov)
+    required: false
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.command }}
