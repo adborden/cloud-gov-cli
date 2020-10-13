@@ -13,7 +13,7 @@ run `cf push`.
 
 ```yaml
     - name: Deploy
-      uses: usds/cloud-gov-cli
+      uses: usds/cloud-gov-cli@master
       with:
         org: ${{secrets.CF_ORG}}
         user: ${{secrets.SERVICE_USER}}
