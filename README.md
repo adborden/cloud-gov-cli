@@ -4,6 +4,9 @@ This is a re-usable action for use in continuous deployment workflows
 using GitHub Actions, to allow automatic management of a deployment in
 cloud.gov (or another Cloud Foundry instance).
 
+Currently, this action uses its own [Dockerfile], which is based on Alpine
+Linux 3.12 and version 7 of the Cloud Foundry CLI.
+
 ## Basic usage
 
 The simplest use of this action is to deploy using an existing manifest. Given
@@ -27,6 +30,9 @@ inputs below may or may not be exhaustive--see the `inputs` section of the
 [action definition](./action.yml) to be sure you have seen them all.
 
 * `command`: the cf-cli subcommand you wish to run. Default: `push`.
+  Additional arguments beyond the subcommand (e.g. `--strategy rolling`) should
+  be respected, though it is possible that they will interact oddly with the
+  way the optional arguments (application and manifest) are managed.
 * `application`: the name of the application as deployed to cloud.gov.
   If there is only one application in your manifest, this may not be needed (but some sub-commands require it in all cases).
 * `user`: **(required)**: The username to authenticate with. Should be a service

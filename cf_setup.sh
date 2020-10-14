@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 api_server=${INPUT_API:-https://api.fr.cloud.gov}
 cf api "$api_server"
@@ -40,7 +40,6 @@ if [[ -n "$INPUT_MANIFEST" ]]; then
         exit 1
     fi
 fi
-
 
 cmd=$1
 shift
