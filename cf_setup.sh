@@ -34,7 +34,7 @@ if [[ -n "$INPUT_APPLICATION" ]]; then
 fi
 if [[ -n "$INPUT_MANIFEST" ]]; then
     if [[ -r "$INPUT_MANIFEST" ]]; then
-        optional_args="${optional_args} -f '$INPUT_MANIFEST'"
+        optional_args="${optional_args} -f $INPUT_MANIFEST"
     else
         echo "Manifest file '$INPUT_MANIFEST' not found"
         exit 1
