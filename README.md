@@ -5,7 +5,7 @@ using GitHub Actions, to allow automatic management of a deployment in
 cloud.gov (or another Cloud Foundry instance).
 
 Currently, this action uses its own [Dockerfile], which is based on Alpine
-Linux 3.12 and version 7 of the Cloud Foundry CLI.
+Linux 3.12 and version 8 of the Cloud Foundry CLI.
 
 ## Basic usage
 
