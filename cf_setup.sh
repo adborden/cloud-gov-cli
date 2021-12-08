@@ -46,4 +46,4 @@ shift
 
 set -x
 
-exec cf $cmd $optional_args "$@"
+exec cf $cmd $optional_args "$*"
