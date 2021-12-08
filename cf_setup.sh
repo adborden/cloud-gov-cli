@@ -44,4 +44,4 @@ fi
 cmd=$1
 shift
 
-exec cf $cmd $optional_args $@
+exec cf $cmd $optional_args "$@"
