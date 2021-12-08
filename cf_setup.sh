@@ -44,4 +44,6 @@ optional_args=""
 cmd=$1
 shift
 
+set -x
+
 exec cf $cmd $optional_args $*
